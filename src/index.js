@@ -5,25 +5,16 @@ function handleRouteChange(tabId, changeInfo, tab) {
 
 	if (!YOUTUBE_ORIGIN_LIST.includes(url.origin)) return
 
-	let css = ''
 	const isRendered = changeInfo?.status === 'complete'
 
+	let css = '#guide, #related { display: none !important; }'
+
 	if (url.pathname === '/') {
-		css = '#guide, #header, #contents, #home-page-skeleton { display: none !important; }'
-	}
-	if (url.pathname === '/watch') {
-		css = '#guide, #header, #related { display: none !important; }'
-		isRendered && setCSSDelayed({ tabId, css: '#contents { display: block !important; }' })
-	}
-
-	if (url.pathname === '/results') {
-		css = '#guide, #header { display: none !important; }'
-		isRendered && setCSSDelayed({ tabId, css: '#contents { display: block !important; }' })
-	}
-
-	if (url.pathname.startsWith('/@')) {
-		css = '#guide { display: none !important; }'
-		isRendered && setCSSDelayed({ tabId, css: '#contents, #header { display: block !important; }' })
+		css += '#contents, #chips, #home-page-skeleton { display: none !important; }'
+	} else if (url.pathname.includes('/videos')) {
+		isRendered && setCSSDelayed({ tabId, css: '#contents { display: flex !important; }' })
+	} else {
+		isRendered && setCSSDelayed({ tabId, css: `#contents { display: block !important; }` })
 	}
 
 	setCSS({ tabId, css })
