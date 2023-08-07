@@ -1,0 +1,22 @@
+{
+	"manifest_version": 3,
+	"name": "Effective browser",
+	"description": "Removes unnecessary content from social media websites",
+	"version": "1.0.0",
+	"icons": {
+		"16": "/assets/icon_16x16.png",
+		"48": "/assets/icon_48x48.png",
+		"128": "/assets/icon_128x128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://*.youtube.com/*"],
+			"js": ["/src/content_script.js"]
+		}
+	],
+	"background": {
+		"service_worker": "/src/index.js"
+	},
+	"permissions": ["tabs", "scripting"],
+	"host_permissions": ["https://*/*"]
+}
