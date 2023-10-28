@@ -12,6 +12,10 @@
 		{
 			"matches": ["https://*.youtube.com/*"],
 			"js": ["/src/content_script.js"]
+		},
+		{
+			"matches": ["https://*.telegram.org/*"],
+			"css": ["/src/telegram.css"]
 		}
 	],
 	"background": {

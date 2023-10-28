@@ -1,0 +1,22 @@
+.sidebar-left .input-search,
+.chatlist-bottom {
+	display: none !important;
+}
+
+.tgico-plusround,
+.tgico-char,
+.tgico-bug,
+.tgico-help,
+.tgico-animations,
+.tgico-darkmode,
+.tgico-savedmessages {
+	display: none !important;
+}
+
+.LeftMainHeader .SearchInput,
+.extra-spacing,
+.left-header-shadow.no-scrollbar,
+[aria-label='Open Stories'],
+.DropdownMenu .MenuItem:not(:nth-child(2)):not(:nth-child(5)) {
+	display: none !important;
+}

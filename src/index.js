@@ -7,11 +7,17 @@ function handleRouteChange(tabId, changeInfo, tab) {
 
 	const isRendered = changeInfo?.status === 'complete'
 
-	let css = '#guide, #related { display: none !important; }'
+	let css =
+		'#guide, #related, #guide-button, .ytd-mini-guide-renderer { display: none !important; }'
 
 	if (url.pathname === '/') {
 		css += '#contents, #chips, #home-page-skeleton { display: none !important; }'
-	} else if (url.pathname.includes('/videos')) {
+	} else if (
+		url.pathname.includes('/videos') ||
+		url.pathname.includes('/streams') ||
+		url.pathname.includes('/shorts') ||
+		url.pathname.includes('/playlists')
+	) {
 		isRendered && setCSSDelayed({ tabId, css: '#contents { display: flex !important; }' })
 	} else {
 		isRendered && setCSSDelayed({ tabId, css: `#contents { display: block !important; }` })
