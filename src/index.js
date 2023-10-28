@@ -14,8 +14,7 @@ function handleRouteChange(tabId, changeInfo, tab) {
 	} else if (
 		url.pathname.includes('/videos') ||
 		url.pathname.includes('/streams') ||
-		url.pathname.includes('/shorts') ||
-		url.pathname.includes('/playlists')
+		url.pathname.includes('/shorts')
 	) {
 		isRendered && setCSSDelayed({ tabId, css: '#contents { display: flex !important; }' })
 	} else {
