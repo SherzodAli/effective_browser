@@ -15,7 +15,8 @@
 		},
 		{
 			"matches": ["https://*.telegram.org/*"],
-			"css": ["/src/telegram.css"]
+			"css": ["/src/telegram.css"],
+			"js": ["/src/telegram.js"]
 		}
 	],
 	"background": {

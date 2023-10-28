@@ -7,8 +7,7 @@ function handleRouteChange(tabId, changeInfo, tab) {
 
 	const isRendered = changeInfo?.status === 'complete'
 
-	let css =
-		'#guide, #related, #guide-button, .ytd-mini-guide-renderer { display: none !important; }'
+	let css = '#guide, #related, #icon, #guide-button { display: none !important; }'
 
 	if (url.pathname === '/') {
 		css += '#contents, #chips, #home-page-skeleton { display: none !important; }'
